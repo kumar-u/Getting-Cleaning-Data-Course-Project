@@ -61,9 +61,10 @@ OUTPUT FILES from run_analysis.R
 **How run_analysis.R script works:**
 
 ---loading the relevant libraries 
-library(httr)
-library(dplyr)
-library(reshape2)
+- library(httr)
+- library(dplyr)
+- library(reshape2)
+
 
 -----Original Dataset link
 
@@ -77,21 +78,25 @@ Step 2: Reading data sets from the train and test directories in the unzipped fi
 Please refer to the attached CodeBook.md for description of the test variables. Dataset also contains README.txt that gives a descriptive background for data collection
 
 Read.table was used to read the train, test data for X, Y and subject datasets
-X_train <- read.table("./UCI-dataset/train/X_train.txt")
-X_test <- read.table("./UCI-dataset/test/X_test.txt")
+- X_train <- read.table("./UCI-dataset/train/X_train.txt")
+- X_test <- read.table("./UCI-dataset/test/X_test.txt")
 
-subject_test <-read.table("./UCI-dataset/test/subject_test.txt")
-subject_train <-read.table("./UCI-dataset/train/subject_train.txt")
 
-y_train <- read.table("./UCI-dataset/train/y_train.txt")
-y_test <- read.table("./UCI-dataset/test/y_test.txt")
+- subject_test <-read.table("./UCI-dataset/test/subject_test.txt")
+- subject_train <-read.table("./UCI-dataset/train/subject_train.txt")
+
+
+- y_train <- read.table("./UCI-dataset/train/y_train.txt")
+- y_test <- read.table("./UCI-dataset/test/y_test.txt")
+
 
 
 Step 3: Reading label headers from the activity_labels and features text files in the unzipped file
 Using gsub to replace the numerical strings at the end some of the variable names
-variable_names<-read.table("./UCI-dataset/features.txt")
-variable_names[,2]<-gsub("(-*[0-9]*,[0-9]*[0-9]*)", "", variable_names[,2])
-activity_labels<-read.table("./UCI-dataset/activity_labels.txt")
+- variable_names<-read.table("./UCI-dataset/features.txt")
+- variable_names[,2]<-gsub("(-*[0-9]*,[0-9]*[0-9]*)", "", variable_names[,2])
+- activity_labels<-read.table("./UCI-dataset/activity_labels.txt")
+
 
 Project Deliverables
 --------------------------------------------------
